@@ -1,0 +1,1 @@
+mathematica interface,on l64 build with gcc -m64 -fPIC -shared -lpthread -L /opt/mma8/SystemFiles/Links/MathLink/DeveloperKit/Linux-x86-64/CompilerAdditions/ -lML64i3 -lrt qmma.c
