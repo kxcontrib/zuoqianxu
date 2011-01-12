@@ -1,0 +1,8 @@
+examples of use google interactive chart api within kdb+'s http server.
+
+run q qweb.k -p 5101
+
+then in brower,try http://localhost:5101/=.h.ggjseg1[]
+... 
+
+json.q comes from [k4] list with title "JSON Output Formatter",minor changed.

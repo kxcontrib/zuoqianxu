@@ -1,0 +1,1 @@
+perl interface,on l64 build with gcc -m64 -fPIC -shared -lpthread `perl -MExtUtils::Embed -e ccopts,ldopts` qperl.c

@@ -1,0 +1,1 @@
+matlab interface,on l64 build with gcc -m64 -fPIC -shared -lpthread -I/opt/matlab10a/extern/include -L/opt/matlab10a/extern/lib/glnxa64 -L/opt/matlab10a/bin/glnxa64 -L/opt/matlab10a/sys/os/glnxa64 -leng -lmx qmatlab.c
