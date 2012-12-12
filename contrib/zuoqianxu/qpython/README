@@ -1,0 +1,1 @@
+python interface,on l64 build with gcc -m64 -DJ64 -DKXVER=3 -fPIC -shared -lm -lpthread -I/usr/include/python2.7 -L../l64 -lpython2.7 -Xlinker -export-dynamic -Bsymbolic-functions qpython.c -o dll/l64/qpython.so
