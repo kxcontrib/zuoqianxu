@@ -2,7 +2,7 @@ isWIN:.z.o in `w32`w64;
 tmpdir:{$[isWIN;"/tmp/";"/tmp/"]};
 rn:{[]n:string first 1?`8;tmpdir[],n};
 
-gplot:{[x;y;z](`$":",y,".cmd") 0: $[z;("set terminal png transparent nocrop enhanced font arial 8 size 840,640";"set output '",y,".png'");$[isWIN;();(enlist "set terminal x11")]],("set autoscale";"set grid"),x,enlist enlist "q";system $[isWIN;"start \\bin\\gnuplot ";"gnuplot "],$[z;"";$[isWIN;"-persist ";"-p "]],y,".cmd";$[z;y,".png";()]}; 
+gplot:{[x;y;z](`$":",y,".cmd") 0: $[z;("set terminal png transparent nocrop enhanced font arial 8 size 840,640";"set output '",y,".png'");$[isWIN;();(enlist "set terminal x11")]],("set autoscale";"set grid"),x,enlist enlist "q";system $[isWIN;"start \\bin\\gnuplot ";"gnuplot "],$[z;"";"-persist "],y,".cmd";$[z;y,".png";()]}; 
 
 pd:{[x;y;e;f]z:rn[];if[not 0=type e;e:enlist e];xt:$[0=type x;$[0=type x 0;type x[0;0];type x 0];type x];
         $[xt in 13 14 17 18 19h;e,:(enlist "set xdata time"),("set timefmt ";"set format x "),\:"'",$[14h=xt;"%Y.%m.%d";13h=xt;"%Y.%m";17h=xt;"%H:%M";18h=xt;"%H:%M:%S"],"'";];
