@@ -1,15 +1,8 @@
----
-title: Q client for J – Interfaces – kdb+ and q documentation
-description: QJ is a C extension for q, working as a frontend of J engine DLL, so we can use the J engine and the J Application Library within q.
-keywords: api, client, interface, j, kdb+, q
----
-# ![J](img/j.png) Q client for J
+# ![J](j.png) Q client for J
 
 
 
 QJ is a C extension for q, working as a frontend of [J](https://www.jsoftware.com/#/) engine DLL, so we can use the [J engine](https://www.jsoftware.com/help/dictionary/vocabul.htm) and the [J Application Library](https://code.jsoftware.com/wiki/JAL/j701) within q. It has been tested on l64 with j701beta. 
-
-:fontawesome-brands-github: [kxcontrib/zuoqianxu/qj](https://github.com/kxcontrib/zuoqianxu/tree/master/qj) 
 
 
 ## Install
@@ -51,13 +44,11 @@ load 'pacman'
 | complex array L | 2-item list whose items are double arrays (Re L;Im L) |
 | boxed array | mixed list:  items will be converted for supported datatypes |
 
-<!-- original
-- There are natural mappings of some J/q datatypes on l64: boolean, char, double, J int&lt;=&gt;q long
-- J complex atom `A` will be converted to a 2-item double array (Re A;Im A). J complex array `L` will be converted to a 2-item list whose items are double arrays (Re L;Im L)
-- Q mixed list maps to J boxed array, items will be converted for supported datatypes
--->
+-   There are natural mappings of some J/q datatypes on l64: boolean, char, double, J int&lt;=&gt;q long
+-   J complex atom `A` will be converted to a 2-item double array (Re A;Im A). J complex array `L` will be converted to a 2-item list whose items are double arrays (Re L;Im L)
+-   Q mixed list maps to J boxed array, items will be converted for supported datatypes
 
-For convenience on l64, q int will be auto-converted to J int, but `0N` `0W` `-0W` will not be correctly converted
+For convenience on `l64`, q int will be auto-converted to J int, but `0N` `0W` `-0W` will not be correctly converted
 
 
 ## Sample usage
@@ -65,19 +56,19 @@ For convenience on l64, q int will be auto-converted to J int, but `0N` `0W` `-0
 Start a q session, then load `qj.q`.
 
 ```q
-q)\l qj.q
+\l qj.q
 ```
 
 Load J runtime:
 
 ```q
-q)initj["/opt/j64-701/bin"];
+initj["/opt/j64-701/bin"];
 ```
 
 Set data to J:
 
 ```q
-q)q2j["a";(01b;2 3 4;5;1 0n 0w -0w -2f;"abcd")]
+q2j["a";(01b;2 3 4;5;1 0n 0w -0w -2f;"abcd")]
 ```
 
 Get data from J:
@@ -145,3 +136,4 @@ COUNTRY     CC   MIC    INSTITUTION DESCRIPTION              ACR     CITY    ..
 ..
 ```
 
+![Zippy the Pinhead](zippy.gif)
